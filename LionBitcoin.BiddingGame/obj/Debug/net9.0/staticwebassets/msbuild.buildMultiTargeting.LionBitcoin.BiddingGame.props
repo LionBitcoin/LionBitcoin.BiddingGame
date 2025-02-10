@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LionBitcoin.BiddingGame.props" />
+</Project>
