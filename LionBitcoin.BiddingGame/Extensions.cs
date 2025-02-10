@@ -1,5 +1,6 @@
 using LionBitcoin.BiddingGame.Application;
 using LionBitcoin.BiddingGame.Application.Shared;
+using LionBitcoin.BiddingGame.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +17,12 @@ public static class Extensions
 
         services.AddScoped<RequestMetadata>();
 
+        return services;
+    }
+
+    public static IServiceCollection AddPersistence(this IServiceCollection services)
+    {
+        services.AddDbContext<BiddingGameDbContext>();
         return services;
     }
 }

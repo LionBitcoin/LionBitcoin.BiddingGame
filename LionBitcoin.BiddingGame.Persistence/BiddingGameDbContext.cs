@@ -23,7 +23,7 @@ public class BiddingGameDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         PostgresDbSettings postgresDbSettings = new PostgresDbSettings();
-        _configuration.GetSection(nameof(BiddingGameDbContext)).Bind(postgresDbSettings);
+        _configuration.GetSection(nameof(PostgresDbSettings)).Bind(postgresDbSettings);
 
         NpgsqlConnectionStringBuilder connectionStringBuilder = new NpgsqlConnectionStringBuilder()
         {
@@ -38,10 +38,12 @@ public class BiddingGameDbContext : DbContext
 
         optionsBuilder.UseNpgsql(connectionStringBuilder.ConnectionString);
         optionsBuilder.UseSnakeCaseNamingConvention();
+
+        base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
+        base.OnModelCreating(modelBuilder);
     }
 }

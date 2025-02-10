@@ -5,18 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi("docs");
+builder.Services.AddSwaggerGen();
 
 builder.Services
-    .AddApplication(builder.Configuration);
+    .AddApplication(builder.Configuration)
+    .AddPersistence();
 
 var app = builder.Build();
 
-app.MapOpenApi();
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/openapi/docs.json", "LionBitcoin.BiddingGame");
-});
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseMiddleware<MetadataFillerMiddleware>();
 
