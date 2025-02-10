@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LionBitcoin.BiddingGame", "LionBitcoin.BiddingGame\LionBitcoin.BiddingGame.csproj", "{03D4BE92-D2FA-43AF-A11A-640268BA1474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LionBitcoin.BiddingGame.Application", "LionBitcoin.BiddingGame.Application\LionBitcoin.BiddingGame.Application.csproj", "{2B7FD7D8-3CE7-402B-8A3B-FB14D13CD7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LionBitcoin.BiddingGame.Persistence", "LionBitcoin.BiddingGame.Persistence\LionBitcoin.BiddingGame.Persistence.csproj", "{952389C1-5FD0-4946-934F-CFD176D95D6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{03D4BE92-D2FA-43AF-A11A-640268BA1474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D4BE92-D2FA-43AF-A11A-640268BA1474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D4BE92-D2FA-43AF-A11A-640268BA1474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7FD7D8-3CE7-402B-8A3B-FB14D13CD7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7FD7D8-3CE7-402B-8A3B-FB14D13CD7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7FD7D8-3CE7-402B-8A3B-FB14D13CD7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7FD7D8-3CE7-402B-8A3B-FB14D13CD7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952389C1-5FD0-4946-934F-CFD176D95D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952389C1-5FD0-4946-934F-CFD176D95D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952389C1-5FD0-4946-934F-CFD176D95D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952389C1-5FD0-4946-934F-CFD176D95D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
