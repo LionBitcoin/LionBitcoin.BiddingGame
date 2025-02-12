@@ -1,7 +1,10 @@
-using System;
 using LionBitcoin.BiddingGame.Application;
 using LionBitcoin.BiddingGame.Application.Models;
+using LionBitcoin.BiddingGame.Application.Repositories;
+using LionBitcoin.BiddingGame.Application.Repositories.Base;
 using LionBitcoin.BiddingGame.Persistence;
+using LionBitcoin.BiddingGame.Persistence.Repositories;
+using LionBitcoin.BiddingGame.Persistence.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +29,10 @@ public static class Extensions
     public static IServiceCollection AddPersistence(this IServiceCollection services)
     {
         services.AddDbContext<BiddingGameDbContext>();
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IGameSessionRepository, GameSessionRepository>();
+
         return services;
     }
 

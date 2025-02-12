@@ -15,4 +15,6 @@ public class GameSession : BaseEntity<Guid>
     /// Ticket price is in the smallest unit. if prices are calculated in USD, then smallest unit is cent. if it is calculated in GEL, then smallest unit is TETRI
     /// </summary>
     public ulong TicketPrice { get; set; }
+
+    public Currency Currency { get; set; }
 }
