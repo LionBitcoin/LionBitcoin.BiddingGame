@@ -1,8 +1,11 @@
+using System;
 using LionBitcoin.BiddingGame.Application;
-using LionBitcoin.BiddingGame.Application.Shared;
+using LionBitcoin.BiddingGame.Application.Models;
 using LionBitcoin.BiddingGame.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace LionBitcoin.BiddingGame;
 
@@ -24,5 +27,12 @@ public static class Extensions
     {
         services.AddDbContext<BiddingGameDbContext>();
         return services;
+    }
+
+    public static void ApplyMigrations(this IHost host)
+    {
+        using IServiceScope scope = host.Services.CreateScope();
+        BiddingGameDbContext dbContext = scope.ServiceProvider.GetRequiredService<BiddingGameDbContext>();
+        dbContext.Database.Migrate();
     }
 }

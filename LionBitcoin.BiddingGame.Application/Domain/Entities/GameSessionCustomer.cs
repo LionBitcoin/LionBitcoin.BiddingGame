@@ -2,7 +2,10 @@ using LionBitcoin.BiddingGame.Application.Domain.Entities.Base;
 
 namespace LionBitcoin.BiddingGame.Application.Domain.Entities;
 
-public class GameSessionPlayers : BaseEntity<int>
+/// <summary>
+/// Mapping between GameSessions and Customers
+/// </summary>
+public class GameSessionCustomer : BaseEntity<int>
 {
     public Guid GameSessionId { get; set; }
 

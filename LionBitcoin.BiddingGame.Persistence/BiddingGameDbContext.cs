@@ -13,7 +13,7 @@ public class BiddingGameDbContext : DbContext
 
     public DbSet<Customer> Customers { get; set; }
 
-    public DbSet<GameSessionPlayers> GameSessionPlayers { get; set; }
+    public DbSet<GameSessionCustomer> GameSessionCustomers { get; set; }
 
     public BiddingGameDbContext(IConfiguration configuration)
     {

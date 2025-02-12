@@ -1,4 +1,4 @@
-using LionBitcoin.BiddingGame.Application.Shared;
+using LionBitcoin.BiddingGame.Application.Models;
 using MediatR;
 
 namespace LionBitcoin.BiddingGame.Application.Features.Game.StartGame;

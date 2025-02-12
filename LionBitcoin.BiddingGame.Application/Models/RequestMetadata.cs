@@ -1,4 +1,4 @@
-namespace LionBitcoin.BiddingGame.Application.Shared;
+namespace LionBitcoin.BiddingGame.Application.Models;
 
 public class RequestMetadata
 {
