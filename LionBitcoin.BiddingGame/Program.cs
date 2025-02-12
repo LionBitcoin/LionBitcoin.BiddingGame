@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddApplication(builder.Configuration)
@@ -13,7 +12,6 @@ builder.Services
 
 var app = builder.Build();
 
-app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseMiddleware<MetadataFillerMiddleware>();
