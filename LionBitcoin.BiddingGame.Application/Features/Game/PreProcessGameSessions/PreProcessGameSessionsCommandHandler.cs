@@ -44,7 +44,7 @@ public class PreProcessGameSessionsCommandHandler : IRequestHandler<PreProcessGa
             IServiceScope serviceScope = _serviceScopeFactory.CreateScope();
             IGameSessionProcessingService processor =
                 serviceScope.ServiceProvider.GetRequiredService<IGameSessionProcessingService>();
-            await processor.PreProcessGameSession(gameSession, token);
+            await processor.PreProcessGameSession(gameSession.Id, token);
         }
         catch (Exception e)
         {

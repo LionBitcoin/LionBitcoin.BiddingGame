@@ -4,5 +4,5 @@ namespace LionBitcoin.BiddingGame.Application.Services.Abstractions;
 
 public interface IGameSessionProcessingService
 {
-    Task PreProcessGameSession(GameSession gameSession, CancellationToken cancellationToken = default);
+    Task PreProcessGameSession(Guid gameSessionId, CancellationToken cancellationToken = default);
 }
