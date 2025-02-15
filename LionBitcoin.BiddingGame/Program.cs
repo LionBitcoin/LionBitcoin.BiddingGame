@@ -1,5 +1,6 @@
 using LionBitcoin.BiddingGame;
 using LionBitcoin.BiddingGame.Application;
+using LionBitcoin.BiddingGame.Infrastructure;
 using LionBitcoin.BiddingGame.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +12,8 @@ builder.Services.AddOpenApi("docs");
 
 builder.Services
     .AddApplication(builder.Configuration)
-    .AddPersistence();
+    .AddPersistence()
+    .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

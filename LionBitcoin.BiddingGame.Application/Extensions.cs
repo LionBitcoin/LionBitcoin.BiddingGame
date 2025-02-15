@@ -1,5 +1,7 @@
 using System.Reflection;
 using LionBitcoin.BiddingGame.Application.Models;
+using LionBitcoin.BiddingGame.Application.Services;
+using LionBitcoin.BiddingGame.Application.Services.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +17,7 @@ public static class Reference
         });
 
         services.AddScoped<RequestMetadata>();
+        services.AddScoped<IGameSessionProcessorService, GameSessionProcessorService>();
 
         return services;
     }

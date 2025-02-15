@@ -17,4 +17,6 @@ public class GameSession : BaseEntity<Guid>
     public ulong TicketPrice { get; set; }
 
     public Currency Currency { get; set; }
+
+    public GameSessionFlag Flags { get; set; }
 }
