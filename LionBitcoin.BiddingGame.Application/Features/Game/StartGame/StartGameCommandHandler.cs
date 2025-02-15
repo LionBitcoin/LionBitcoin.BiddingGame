@@ -2,7 +2,6 @@ using System.Data;
 using LionBitcoin.BiddingGame.Application.Domain.Entities;
 using LionBitcoin.BiddingGame.Application.Domain.Enums;
 using LionBitcoin.BiddingGame.Application.Models;
-using LionBitcoin.BiddingGame.Application.Repositories;
 using LionBitcoin.BiddingGame.Application.Repositories.Base;
 using MediatR;
 

@@ -1,3 +1,4 @@
+using System.Reflection;
 using LionBitcoin.BiddingGame.Application.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,6 +45,8 @@ public class BiddingGameDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
         base.OnModelCreating(modelBuilder);
     }
 }

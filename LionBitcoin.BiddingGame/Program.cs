@@ -1,4 +1,6 @@
 using LionBitcoin.BiddingGame;
+using LionBitcoin.BiddingGame.Application;
+using LionBitcoin.BiddingGame.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
