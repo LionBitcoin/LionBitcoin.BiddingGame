@@ -29,4 +29,9 @@ public class GameSessionRepository : BaseRepository<GameSession, Guid>, IGameSes
             sql: @lock ? getAvailableSessionQueryWithLock : getAvailableSessionQuery, 
             transaction: Transaction);
     }
+
+    public Task<List<GameSession>> GetPendingGameSessions(bool @lock, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
 }

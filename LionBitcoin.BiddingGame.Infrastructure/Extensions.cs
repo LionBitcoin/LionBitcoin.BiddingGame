@@ -1,5 +1,7 @@
 using Hangfire;
 using Hangfire.PostgreSql;
+using LionBitcoin.BiddingGame.Infrastructure.Jobs;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
@@ -41,5 +43,22 @@ public static class Extensions
             }));
 
         services.AddHangfireServer();
+
+        services.AddScoped<GameSessionPreProcessorJob>();
+    }
+
+    public static IApplicationBuilder RunHangFire(this IApplicationBuilder app)
+    {
+        app.UseHangfireDashboard("/hangfire");
+        RegisterRecurringJobs(app);
+
+        return app;
+    }
+
+    private static void RegisterRecurringJobs(IApplicationBuilder app)
+    {
+        IRecurringJobManager recurringJobManager = app.ApplicationServices.GetRequiredService<IRecurringJobManager>();
+        
+        GameSessionPreProcessorJob.RegisterJob(recurringJobManager);
     }
 }

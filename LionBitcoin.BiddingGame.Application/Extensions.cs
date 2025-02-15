@@ -17,7 +17,7 @@ public static class Reference
         });
 
         services.AddScoped<RequestMetadata>();
-        services.AddScoped<IGameSessionProcessorService, GameSessionProcessorService>();
+        services.AddScoped<IGameSessionProcessingService, GameSessionProcessingService>();
 
         return services;
     }

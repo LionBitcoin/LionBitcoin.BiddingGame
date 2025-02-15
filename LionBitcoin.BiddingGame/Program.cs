@@ -12,7 +12,7 @@ builder.Services.AddOpenApi("docs");
 
 builder.Services
     .AddApplication(builder.Configuration)
-    .AddPersistence()
+    .AddPersistence(builder.Configuration)
     .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
@@ -25,7 +25,9 @@ app.UseSwaggerUI(options =>
 
 app.UseMiddleware<MetadataFillerMiddleware>();
 
+app.RunHangFire();
+app.ApplyMigrations();
+
 app.MapControllers();
 
-app.ApplyMigrations();
 app.Run();

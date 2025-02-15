@@ -5,4 +5,5 @@ public enum GameSessionFlag
 {
     TransportCreated = 1,
     PlayersFilled = 2,
+    TransportListenersCreated = 4,
 }
