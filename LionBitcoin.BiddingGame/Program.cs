@@ -25,7 +25,6 @@ app.UseSwaggerUI(options =>
 
 app.UseMiddleware<MetadataFillerMiddleware>();
 
-app.RunHangFire();
 app.ApplyMigrations();
 
 app.MapControllers();
